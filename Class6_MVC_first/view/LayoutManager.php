@@ -4,6 +4,6 @@ class LayoutManager
 {
 	public function start()
 	{
-		include "UserRegister.php";
+		echo "<script language='JavaScript' src='view/UserRegister.js' type='text/javascript'></script>";
 	}
 } 

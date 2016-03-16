@@ -1,6 +1,6 @@
 <?php
 
-include "view/LayoutManager.php";
+include "./control/ControlManager.php";
 
-$lm = new LayoutManager();
-echo $lm->start();
+$cm = new ControlManager();
+$cm->lmStart();

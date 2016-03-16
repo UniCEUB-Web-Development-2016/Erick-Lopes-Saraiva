@@ -1,7 +1,7 @@
 <?php
 
-include "../model/User.php";
-include "../util/FileManager.php";
+include "/var/www/html/MVC/model/User.php";
+include "/var/www/html/MVC/util/FileManager.php";
 
 class UserController
 {
