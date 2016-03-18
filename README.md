@@ -1,5 +1,3 @@
 # Erick-Lopes-Saraiva
 
-
-
-TESTE TESTE TESTE
+Testing git push with credential saved in gnome-keyring...
