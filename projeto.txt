@@ -1,0 +1,19 @@
+Criar um sistema de analise dinamica de codigo em c/c++
+
+OBJETIVOS:
+
+Realizar analise simples de performance utilizando expressões regulares
+Fazer sugestões de codigo com base nos resultados das analises realizadas
+Prover um score de performance do codigo com diversos niveis e conquistas (campeonato de tuning)
+
+OBJETIVOS AVANÇADOS:
+
+Utilizar um compilador instrumentado com contadores de performance para realizar testes do código
+Criar ambientes virtuais dinamicamente para teste sintetico do codigo (fazendo analise de performance) (docker much??)
+Fazer mapeamento e diagramação dos codigos existentes (UML reverso)
+
+OBJETIVOS ULTRA MEGA FODAS BLASTER AVANÇADOS:
+
+Engenharia reversa de binarios
+Testes de performance de codigo já compliado
+
