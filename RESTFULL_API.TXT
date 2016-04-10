@@ -1,0 +1,94 @@
+RESTFULL API "WIREFRAME"
+
+--------FORMAT---------
+Uniform Resource Identifier (URI)
+GET
+PUT
+POST
+DELETE
+-------FORMAT END-------
+
+USUARIO http://uiot.org/performance/api/v0/usuario
+Listar todos os usuarios.
+NOT APPLICABLE
+NOT APPLICABLE
+NOT APPLICABLE
+
+USUARIO http://uiot.org/performance/api/v0/usuario/$id
+Listar o usuario.
+Substitui o usuario referenciado caso ele não exista será oportunamente criado.
+NOT APPLICABLE
+Deleta o usuario referenciado.
+
+INTEGRACAO http://uiot.org/performance/api/v0/integracao/
+Listar todos servidores que usam a API.
+NOT APPLICABLE
+NOT APPLICABLE
+NOT APPLICABLE
+
+INTEGRACAO http://uiot.org/performance/api/v0/integracao/$id
+Listar os dados do par servidor chave.
+Substitui o servidor referenciado caso ele não exista será oportunamente criado. (note que o valor da chave nunca é setado via API é gerado internamente pelo sistema)
+NOT APPLICABLE
+Deleta o par referenciado.
+
+PROGRAM http://uiot.org/performance/api/v0/program/
+Listar todos os programas.
+NOT APPLICABLE
+NOT APPLICABLE
+NOT APPLICABLE
+
+PROGRAM http://uiot.org/performance/api/v0/program/$id
+Listar o programa.
+Substitui o programa caso ele não exista será oportunamente criado. (note que essa acao ira deletar o codigo fonte e programa compilado anterior e versionar os valores de score hash e ações recomendadas alem de iniciar o processo de calcular score hash e gerar recomendacoes para a nova versao do programa e setar as permicoes iniciais)
+NOT APPLICABLE
+Deleta o programa referenciado.
+
+CODE http://uiot.org/performance/api/v0/program/$id/code/
+Listar todos os codigos associados ao programa.
+NOT APPLICABLE
+NOT APPLICABLE
+NOT APPLICABLE
+
+CODE http://uiot.org/performance/api/v0/program/$id/code/$id
+Recuperar codigo.
+NOT APPLICABLE
+NOT APPLICABLE
+NOT APPLICABLE
+
+SCORE http://uiot.org/performance/api/v0/program/$id/code/$id/score/
+Listar todos os pares hash e score daquele codigo
+NOT APPLICABLE
+NOT APPLICABLE
+NOT APPLICABLE
+
+SCORE http://uiot.org/performance/api/v0/program/$id/code/$id/score/$version
+Listar um par hash score de uma versao expecifica do codigo
+NOT APPLICABLE
+NOT APPLICABLE
+NOT APPLICABLE
+
+RECOMMENDED ACTIONS http://uiot.org/performance/api/v0/program/$id/code/recac/
+Listar todas as acoes recomendadas para aumentar o score/performance do codigo
+NOT APPLICABLE
+NOT APPLICABLE
+NOT APPLICABLE
+
+RECOMMENDED ACTIONS http://uiot.org/performance/api/v0/program/$id/code/recac/$version
+Listar as acoes recomendadas para aumentar o score/performance de uma versao expecifica do codigo
+NOT APPLICABLE
+NOT APPLICABLE
+NOT APPLICABLE
+
+OWNER http://uiot.org/performance/api/v0/program/$id/owner
+Listar os usuarios que tem propriedade sobre o programa
+Substitui a lista de usuarios com proprieadade sobre o programa essa lista é inicializada pelo ato de criar um novo programa e em caso de substituicao deve haver ao menos um usuario valido
+NOT APPLICABLE
+Deleta a propriedade de usuario que nao seja o ultimo proprietario do programa
+
+VIEWER http://uiot.org/performance/api/v0/program/$id/viewer
+Listar os usuarios que tem visibilidade sobre o programa
+"Substitui a lista de usuarios com visibilidade sobre o programa
+ caso essa lista nao exista ela sera oportunamente criada."
+NOT APPLICABLE
+Deleta a visibilidade de um usuario.

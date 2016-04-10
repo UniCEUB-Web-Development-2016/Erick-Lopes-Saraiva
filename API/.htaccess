@@ -1,0 +1,43 @@
+
+/*LEIA ANTES DE USAR A DOC DO MOD REWRITE
+*http://httpd.apache.org/docs/current/mod/mod_rewrite.html
+*ESSE ARQUIVO EH RESPONSAVEL POR CONFIGURARO O APACHE PARA REDIRECIONAR 
+*/TODOS OS REQUESTS PARA NOSSA API!!! QUE POR SUA VEZ VAI INDICAR PARA ONDE O REQUEST VAI
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+//Habilita o servico de rewrite
+
+//CONDICIONAL PARA REWRITE.. SE NÃO EH UM ARQUIVO 
+RewriteCond %{REQUEST_FILENAME} !-f
+//CONDICIONAL PARA REWRITE.. SE NÃO EH UM DIRETORIO
+RewriteCond %{REQUEST_FILENAME} !-d
+
+/**REESCREVENDO O REQUEST
+* RewriteRule api/v0/(.*)$ api/v0/api.php?request=$1 [QSA,NC,L]
+* Regra rewrite do request detalhada
+* Podemos dividir nosso rewrite em 3 partes
+*
+* A primeira seria o padrão que usamos para sacar os valores da nossa url atual
+* Importante notar que utilizamos um Regex compativel com perl para extrair os valores dessa url
+* Podemos utilizar varias RewriteRules mas no caso utilizaremo soh uma
+*	 regra para sacar os dados de request -> api/v0/(.*)$
+*	 api/v0/ eh nossa url atual 
+*	 os parenteses indicam um grupo de texto()
+*	 $ indica o fim definitivo da nossa regra de extracao
+*	 . eh qualquer char unico evita um request vasio
+* 	 * catch all qualquer sequencia de chars de qualquer tamanho
+* A segunda parte define a nossa url de substituicao
+* ou seja vamos enviar todos os requests para nossa API 
+* efetivamente com essa regra pois a URL do request sera 
+* alterada
+*	 api/v0/api.php?request=$1
+*	 entao rescrevemos nosso request como api/v0/api.php?request=$1
+*    $1 eh o lugar onde todo o texto extraido da url anterior eh colocado
+*
+*	 Temos agora alguns flags que habilitamos por boa pratica
+*	 [QSA, Query string append eh o flag que eh responsavel indicar ao Rewrite rule que não remova a query string da url de substituicao mantendo o request=
+*	 NC, nocase faz que o rewrite seja case insensitive
+*	 L,] last indica que não há regras depois dessa
+*/
+</IfModule>

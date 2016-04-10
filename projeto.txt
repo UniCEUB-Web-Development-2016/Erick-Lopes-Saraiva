@@ -17,3 +17,19 @@ OBJETIVOS ULTRA MEGA FODAS BLASTER AVANÇADOS:
 Engenharia reversa de binarios
 Testes de performance de codigo já compliado
 
+REQUISICOES QUE O SERVIDOR IRA RESPONDER
+
+
+//INICIAIS
+
+POST usuario
+GET usuario
+PUT usuario
+DELETE usuario
+POST api
+GET api
+DELETE api
+PUT api
+GET  resultado
+POST codigo
+
